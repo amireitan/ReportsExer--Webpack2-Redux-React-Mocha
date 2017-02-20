@@ -1,0 +1,155 @@
+.app__sidebar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 250px;
+	background:white;
+	border-right: 1px solid $color1;
+	transition: all 0.2s;
+}
+
+
+/**********************
+		Header
+ **********************/
+.app__sidebar__header {
+	background-color: $color2;
+	color: $color3;
+	padding: 12px 7px 7px 7px;
+
+	.app__sidebar__header__title {
+		display: inline;
+		font-size: 16px;
+    	font-weight: lighter;
+	}
+	.app__sidebar__header__buttons {
+		position: relative;
+    	bottom: 5px;
+		float: right;
+	}
+
+	.app__sidebar__header__buttons__close {
+		@include backgroundImage($url:'sidebar/close-button.png',$width: 10px, $height: 10px);
+	}
+
+	.app__sidebar__header__buttons__refresh {
+		@include backgroundImage($url:'sidebar/refresh-button.png',$width: 12px, $height: 12px);
+		position: relative;
+		right: 16px;
+		transition: 0.2s ease-out all;
+
+		&:active {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+
+/****************************
+	Message (error/waitig)
+ ****************************/
+
+ .app__sidebar__message {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 30px;
+}
+
+/**********************
+		Search bar
+ **********************/
+.app__sidebar__searchBar {
+	position: relative;
+	padding: 7px;
+	input { border: none; padding: 4px 0 4px 0;}
+	border-bottom: 1px solid $color1;
+}
+
+.app__sidebar__searchBar__buttons {
+	position: absolute;
+	right: 7px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.app__sidebar__searchBar__buttons__up {
+	@include buttonTriangle(bottom);
+	margin-bottom: 2px;
+}
+
+.app__sidebar__searchBar__buttons__down {
+	@include buttonTriangle(top);
+}
+
+/**********************
+		List
+ **********************/
+.app__sidebar__list__container {
+	position: absolute;
+    top: 75px;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+}
+
+.app__sidebar__list__container__content {
+	position:relative;
+}
+
+.app__sidebar__list {
+	/*overflow: auto;*/
+	height: 100%;
+}
+
+.app__sidebar__list__item {
+	font-size: 11px;
+	border-bottom: 1px solid $color1;
+	color:$color5;
+	padding: 7px 7px 7px 7px; 
+}
+
+.app__sidebar__list__item__main,
+.app__sidebar__list__item__time {
+	display: inline-block;
+}
+
+.app__sidebar__list__item__main {
+	width: calc(100% - 60px);
+}
+
+.app__sidebar__list__item__time {
+	float: right;
+	width: 60px;
+	text-align: center;
+}
+
+.app__sidebar__list__item__main__name{
+	margin-bottom: 15px;
+	pre {
+		font-family: sans-serif;
+		overflow: hidden;
+    	text-overflow: ellipsis;
+	}
+}
+
+.app__sidebar__list__item__main__location {
+	color: $color6;
+	font-size: 10px;
+}
+
+.app__sidebar__list__item__time__date {
+	margin-bottom: 15px;
+}
+
+/********************
+		Footer
+ ********************/
+ .app__sidebar__footer {
+	height:8px;
+	border-top: 1px solid $color1;
+	background-color: $color2;
+	position: absolute;
+	bottom:0; left:0; right:0;
+}
+

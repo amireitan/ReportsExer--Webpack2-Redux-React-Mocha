@@ -1,0 +1,12 @@
+.app {
+	font-family: sans-serif;
+}
+
+.app__main--full,
+.app__header--full {
+	left: 0;
+}
+.app__main--partial,
+.app__header--partial{
+	left: 250px;
+}

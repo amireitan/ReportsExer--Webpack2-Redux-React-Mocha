@@ -1,0 +1,31 @@
+.app__main {
+	position: absolute;
+	top: 70px;
+	bottom: 0;
+	right: 0;
+	background: #fff;
+	transition: all 0.2s;
+	border-left: 1px solid #ccc;
+}
+
+.app__main__open-sidebar {
+	position: absolute;
+	top: -95px;
+	bottom:0;
+	left: -39px;
+	height: 20px;
+	padding: 7px;
+	margin: auto;
+	background: #d9dad9;
+	font-size: 14px;
+	color: #6b9bcd;
+	border-radius: 10px 10px 0 0;
+	transform: rotate(90deg);
+	cursor: pointer;
+	transition: all 0.2s;
+
+	&:hover {
+		font-size: 16px;
+		padding: 18px;
+	}
+}

@@ -1,0 +1,18 @@
+@mixin buttonTriangle($borderType) {
+	display: block;
+	width: 0px;
+    height: 0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-#{$borderType}: 5px solid $color4;
+
+	&.selected {border-#{$borderType}-color: $color3;}
+}
+
+@mixin backgroundImage($url, $width, $height){
+	display: inline-block;
+	background-image: url($url);
+	background-repeat: no-repeat;
+	width: $width;
+	height: $height;
+}
