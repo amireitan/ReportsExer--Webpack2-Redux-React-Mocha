@@ -5,6 +5,7 @@ import {shouldFetchSidebarData, filterReportsList, sortReportsList, closeSidebar
 import SidebarList from './SidebarList';
 import SidebarHeader from './SidebarHeader';
 import SidebarSearchbar from './SidebarSearchbar';
+import {filterSort} from '../../selectors/sidebarSelectors'; 
 
 export class Sidebar extends Component {
     
@@ -84,20 +85,10 @@ Sidebar.propTypes = {
   closeSidebar: React.PropTypes.func
 }
 
-function filterSort(data, filterText, isAsc){
-    const sortType = {
-        asc: (a, b) => a.updated - b.updated,
-        des: (a, b) => b.updated - a.updated
-    };
-    const sortFunc = isAsc ?  sortType.asc : sortType.des;
-    return data.filter(item => item.name.toLowerCase().includes(filterText))
-               .sort(sortFunc);
-}
-
 function mapStateToProps(state) {
     const {isRender, data, textFilter, title, isAsc, isWaiting, isError, errorMessage} = state.sidebarData;
     return  {
-        data: filterSort(data, textFilter, isAsc), 
+        data: filterSort(state.sidebarData), 
         isRender, textFilter,title, isAsc, isWaiting, isError 
     }
 }
