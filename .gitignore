@@ -1,9 +1,5 @@
-.DS_STORE
 node_modules
-static
 .module-cache
 *.log*
-_nogit
-tmp/mocha-webpack
 dist
 .tmp
